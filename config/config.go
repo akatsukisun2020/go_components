@@ -10,7 +10,6 @@ import (
 // GrpcGoConfig grpc_go的静态配置信息
 type GrpcGoConfig struct {
 	SystemConfig SystemConfig `yaml:"SystemConfig"` // 系统配置
-	UserConfig   UserConfig   `yaml:"UserConfig"`   // 用户配置
 }
 
 // ServerConfig 服务配置
@@ -63,12 +62,4 @@ func GetSystemConfig() *SystemConfig {
 		return &gGrpcGoConfig.SystemConfig
 	}
 	return &SystemConfig{}
-}
-
-// GetUserConfig 获取用户配置信息
-func GetUserConfig() *UserConfig {
-	if gGrpcGoConfig != nil {
-		return &gGrpcGoConfig.UserConfig
-	}
-	return &UserConfig{}
 }
